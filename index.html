@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Army Family — Utah 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --terracotta: #C0614A;
+  --terracotta-light: #E8937A;
+  --terracotta-dark: #9A4A35;
+  --sage: #8A9A7B;
+  --sage-light: #B5C4A8;
+  --sage-dark: #5C6B55;
+  --cream: #F5F0E8;
+  --cream-dark: #EDE6D5;
+  --dark: #2C1810;
+  --dark-mid: #4A3728;
+  --warm-gray: #6B6460;
+  --white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+/* ─── HERO ─── */
+.site-hero {
+  height: 100vh; min-height: 600px;
+  background-color: var(--terracotta-dark);
+  background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover; background-position: center;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; position: relative;
+}
+.site-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(44,24,16,0.45) 0%, rgba(44,24,16,0.72) 100%);
+}
+.hero-content { position: relative; z-index: 1; color: var(--white); padding: 2rem; }
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 5px; text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 1rem;
+}
+.hero-title { font-size: clamp(3rem, 9vw, 6.5rem); font-weight: 700; line-height: 1.05; margin-bottom: 0.4rem; }
+.hero-subtitle {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 3vw, 1.9rem);
+  font-style: italic; color: var(--sage-light); margin-bottom: 1.75rem;
+}
+.hero-dates { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 300; letter-spacing: 3px; color: rgba(255,255,255,0.75); }
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.55); font-size: 0.72rem; letter-spacing: 3px;
+  text-transform: uppercase; animation: bounce 2.2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(9px); }
+}
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--dark); overflow-x: auto; scrollbar-width: none;
+}
+nav::-webkit-scrollbar { display: none; }
+.nav-inner { display: flex; align-items: center; min-width: max-content; padding: 0 1rem; }
+.nav-inner a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+  padding: 1rem 1.1rem; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.nav-inner a:hover { color: var(--terracotta-light); border-bottom-color: var(--terracotta-light); }
+.nav-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.12); margin: 0 0.2rem; }
+
+/* ─── PARK BANNERS ─── */
+.park-banner {
+  background: var(--dark); color: var(--white);
+  padding: 3.5rem 2rem; text-align: center; position: relative; overflow: hidden;
+}
+.park-banner::after {
+  content: ''; position: absolute; inset: 0; opacity: 0.12;
+}
+.park-banner.zion::after { background: var(--terracotta); }
+.park-banner.bryce::after { background: #D4732A; }
+.park-banner.capitol::after { background: var(--sage); }
+.park-banner.moab::after { background: #8B4513; }
+.park-label {
+  position: relative; z-index: 1;
+  font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 0.5rem;
+}
+.park-banner h2 { position: relative; z-index: 1; font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 0.5rem; }
+.park-banner p { position: relative; z-index: 1; color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+
+/* ─── DAY SECTIONS ─── */
+.day-section { border-bottom: 1px solid var(--cream-dark); }
+.day-hero {
+  height: 430px; background-size: cover; background-position: center;
+  position: relative; display: flex; align-items: flex-end;
+}
+.day-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,24,16,0.88) 0%, rgba(44,24,16,0.18) 55%, transparent 100%);
+}
+.day-hero-content { position: relative; z-index: 1; padding: 2.5rem; color: var(--white); width: 100%; }
+.day-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.day-number {
+  background: var(--terracotta); color: white;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 0.28rem 0.7rem; border-radius: 2px;
+}
+.day-type {
+  background: rgba(255,255,255,0.13); backdrop-filter: blur(4px); color: white;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+  padding: 0.28rem 0.7rem; border-radius: 2px;
+}
+.day-hero-content h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); margin-bottom: 0.2rem; line-height: 1.15; }
+.day-vibe { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--sage-light); }
+
+/* ─── DAY CONTENT ─── */
+.day-content { padding: 2.5rem; max-width: 1100px; margin: 0 auto; }
+.activities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+@media (max-width: 780px) { .activities-grid { grid-template-columns: 1fr; } }
+
+.activity-card {
+  background: var(--white); border-radius: 8px; padding: 1.75rem;
+  border-top: 4px solid var(--terracotta); box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.activity-card.afternoon { border-top-color: var(--sage); }
+.activity-time {
+  font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem;
+}
+.activity-card.afternoon .activity-time { color: var(--sage-dark); }
+.activity-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--dark); }
+.trail-meta { display: flex; gap: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+.trail-badge {
+  font-size: 0.7rem; font-weight: 600; padding: 0.22rem 0.6rem;
+  border-radius: 20px; letter-spacing: 0.3px;
+}
+.trail-miles { background: var(--cream-dark); color: var(--dark-mid); }
+.trail-easy { background: #D4EDDA; color: #155724; }
+.trail-moderate { background: #FFF3CD; color: #7A5800; }
+.trail-hard { background: #F8D7DA; color: #721C24; }
+.trail-flex { background: #D1ECF1; color: #0C5460; }
+.trail-permit { background: #E8D5F5; color: #4A1A7A; }
+.trail-stop { background: #FFE5CC; color: #7A3D00; }
+.activity-card p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.68; margin-bottom: 1.25rem; }
+.alltrails-link {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  color: var(--terracotta); font-size: 0.78rem; font-weight: 600;
+  text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s;
+}
+.alltrails-link:hover { color: var(--terracotta-dark); }
+.activity-single {
+  background: var(--white); border-radius: 8px; padding: 1.75rem;
+  border-top: 4px solid var(--terracotta); box-shadow: 0 2px 14px rgba(0,0,0,0.06); margin-bottom: 1.75rem;
+}
+.activity-single p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.68; margin-bottom: 1.25rem; }
+
+/* ─── DRIVE CALLOUT ─── */
+.drive-callout {
+  background: var(--dark); border-radius: 8px; padding: 1.75rem 2rem;
+  margin-bottom: 1.75rem; position: relative; overflow: hidden;
+}
+.drive-callout::before {
+  content: '🚗'; position: absolute; right: 1.5rem; top: 50%;
+  transform: translateY(-50%); font-size: 4.5rem; opacity: 0.08;
+}
+.drive-eyebrow {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 0.45rem;
+}
+.drive-callout h3 { color: var(--white); font-size: 1.35rem; margin-bottom: 0.7rem; }
+.drive-callout p { color: rgba(255,255,255,0.62); font-size: 0.88rem; line-height: 1.65; max-width: 700px; }
+.drive-stops { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
+.drive-stop {
+  background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.78);
+  font-size: 0.76rem; padding: 0.28rem 0.72rem; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ─── ROADSIDE STRIP ─── */
+.roadside-strip {
+  background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+  border-radius: 8px; padding: 1.5rem 2rem; margin-bottom: 1.75rem;
+}
+.roadside-eyebrow {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0.4rem;
+}
+.roadside-strip h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 0.45rem; }
+.roadside-strip p { color: rgba(255,255,255,0.82); font-size: 0.88rem; line-height: 1.65; }
+
+/* ─── TIP INLINE ─── */
+.tip-inline {
+  display: flex; gap: 1rem; background: #FFF8E6;
+  border-left: 4px solid #E09820; border-radius: 0 6px 6px 0;
+  padding: 1rem 1.25rem; margin-bottom: 1rem; align-items: flex-start;
+}
+.tip-inline-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.05rem; }
+.tip-inline p { font-size: 0.87rem; color: #5A4200; line-height: 1.55; margin: 0; }
+.tip-inline p strong { color: #3A2A00; }
+
+/* ─── HOTEL BADGE ─── */
+.hotel-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--cream-dark); border: 1px solid rgba(44,24,16,0.1);
+  border-radius: 6px; padding: 0.55rem 1rem; font-size: 0.84rem;
+  color: var(--dark-mid); margin-bottom: 1.75rem;
+}
+
+/* ─── SCENIC DRIVES ─── */
+#scenic-drives { background: var(--dark); padding: 5rem 2rem; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-eyebrow {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 0.75rem;
+}
+#scenic-drives .section-header h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--white); margin-bottom: 0.7rem; }
+#scenic-drives .section-header p { color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto; font-size: 0.95rem; }
+.drives-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+.drive-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; overflow: hidden; transition: transform 0.25s;
+}
+.drive-card:hover { transform: translateY(-4px); }
+.drive-card-img { height: 200px; background-size: cover; background-position: center; }
+.drive-card-body { padding: 1.5rem; }
+.drive-card-body h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 0.45rem; }
+.drive-card-body p { color: rgba(255,255,255,0.57); font-size: 0.84rem; line-height: 1.62; margin-bottom: 1rem; }
+.drive-card-stops { display: flex; flex-direction: column; gap: 0.4rem; }
+.drive-card-stop { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.72); font-size: 0.79rem; }
+.drive-card-stop::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta-light); flex-shrink: 0; }
+
+/* ─── FOOD ─── */
+#food { padding: 5rem 2rem; background: var(--cream-dark); }
+#food .section-eyebrow { color: var(--terracotta); }
+#food .section-header h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--dark); margin-bottom: 0.7rem; }
+#food .section-header p { color: var(--warm-gray); max-width: 480px; margin: 0 auto; font-size: 0.95rem; }
+.food-tabs { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.food-tab {
+  padding: 0.58rem 1.5rem; border-radius: 25px; border: 2px solid var(--terracotta);
+  background: transparent; color: var(--terracotta); font-family: 'Inter', sans-serif;
+  font-size: 0.84rem; font-weight: 600; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px;
+}
+.food-tab.active, .food-tab:hover { background: var(--terracotta); color: white; }
+.food-location { display: none; max-width: 1100px; margin: 0 auto; }
+.food-location.active { display: block; }
+.food-location-header { margin-bottom: 1.5rem; }
+.food-location-header h3 { font-size: 1.9rem; color: var(--dark); margin-bottom: 0.2rem; }
+.food-location-header p { color: var(--warm-gray); font-size: 0.88rem; }
+.food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.2rem; }
+.food-card {
+  background: var(--white); border-radius: 10px; padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 3px solid var(--terracotta);
+}
+.food-card.coffee { border-top-color: #7B5230; }
+.food-card.must { border-top-color: var(--sage-dark); }
+.food-card-type {
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.35rem;
+}
+.food-card.coffee .food-card-type { color: #7B5230; }
+.food-card.must .food-card-type { color: var(--sage-dark); }
+.food-card h4 { font-size: 1.2rem; margin-bottom: 0.45rem; color: var(--dark); }
+.food-card p { font-size: 0.84rem; color: var(--warm-gray); line-height: 1.62; }
+.order-this { margin-top: 0.8rem; font-size: 0.77rem; font-weight: 600; color: var(--terracotta); }
+.food-card.coffee .order-this { color: #7B5230; }
+.food-card.must .order-this { color: var(--sage-dark); }
+
+/* ─── TIPS ─── */
+#tips { padding: 5rem 2rem; background: var(--cream); }
+#tips .section-eyebrow { color: var(--terracotta); }
+#tips .section-header h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--dark); margin-bottom: 0.7rem; }
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 0 auto; }
+.tip-card {
+  background: var(--white); border-radius: 10px; padding: 1.6rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: flex; gap: 1.2rem; align-items: flex-start;
+}
+.tip-icon { font-size: 1.8rem; flex-shrink: 0; }
+.tip-card h4 { font-size: 1rem; margin-bottom: 0.35rem; color: var(--dark); }
+.tip-card p { font-size: 0.84rem; color: var(--warm-gray); line-height: 1.62; }
+
+/* ─── STATS BAR ─── */
+.stats-bar { background: var(--terracotta-dark); padding: 3.5rem 2rem; text-align: center; }
+.stats-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 0.75rem; }
+.stats-bar h2 { font-size: 1.6rem; color: white; margin-bottom: 2.5rem; }
+.stats-grid { display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap; }
+.stat-item { text-align: center; }
+.stat-number { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: white; line-height: 1; margin-bottom: 0.3rem; }
+.stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.58); letter-spacing: 1px; }
+
+footer { background: var(--dark); padding: 2rem; text-align: center; color: rgba(255,255,255,0.35); font-size: 0.78rem; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="site-hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Once in a Lifetime</div>
+    <h1 class="hero-title">The Army Family</h1>
+    <p class="hero-subtitle">Utah National Parks</p>
+    <p class="hero-dates">March 26 – April 5, 2026</p>
+  </div>
+  <div class="hero-scroll">▼ &nbsp; Begin</div>
+</section>
+
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#day-326">3/26 Arrive</a>
+    <div class="nav-divider"></div>
+    <a href="#zion">Zion</a>
+    <a href="#day-327">3/27</a>
+    <a href="#day-328">3/28</a>
+    <a href="#day-329">3/29</a>
+    <div class="nav-divider"></div>
+    <a href="#bryce">Bryce</a>
+    <a href="#day-330">3/30</a>
+    <a href="#day-331">3/31</a>
+    <div class="nav-divider"></div>
+    <a href="#capitol">Capitol Reef</a>
+    <a href="#day-401">4/1</a>
+    <div class="nav-divider"></div>
+    <a href="#moab">Moab</a>
+    <a href="#day-402">4/2</a>
+    <a href="#day-403">4/3</a>
+    <a href="#day-404">4/4</a>
+    <div class="nav-divider"></div>
+    <a href="#day-405">4/5 Home</a>
+    <div class="nav-divider"></div>
+    <a href="#scenic-drives">Drives</a>
+    <a href="#food">Food</a>
+    <a href="#tips">Tips</a>
+  </div>
+</nav>
+
+<!-- ══════════ 3/26 ARRIVAL ══════════ -->
+<section class="day-section" id="day-326">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1400&q=80'); background-color: #3A2A1A;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 1</span>
+        <span class="day-type">Travel Day</span>
+      </div>
+      <h2>Thursday, March 26</h2>
+      <p class="day-vibe">Wheels up. Adventure begins.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="hotel-badge">🏨 Hampton Inn Draper · Salt Lake City · 1 night</div>
+    <div class="drive-callout">
+      <div class="drive-eyebrow">Landing at 12:30 PM · Drive South Tomorrow</div>
+      <h3>Tonight: Stock Up in SLC</h3>
+      <p>You've got a 4-hour drive to Zion tomorrow morning. Tonight is for gear checks and provisions. Smith's Marketplace in Draper is the move — grab trail snacks, packed lunches for the first few days, and a case of water. REI Salt Lake is 20 minutes north if you need anything last-minute.</p>
+      <div class="drive-stops">
+        <span class="drive-stop">🛒 Smith's Marketplace — Draper (groceries)</span>
+        <span class="drive-stop">🏕️ REI — Salt Lake City (last-minute gear)</span>
+        <span class="drive-stop">🌮 Costa Vida — Draper (easy dinner)</span>
+      </div>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">💧</div>
+      <p>Buy a full case of water tonight. Utah's desert air pulls moisture out of you faster than you'll feel it. Start hydrating before day one — plan for a liter per person every two hours on the trail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ZION BANNER ══════════ -->
+<div class="park-banner zion" id="zion">
+  <div class="park-label">National Park</div>
+  <h2>Zion</h2>
+  <p>Three days in Utah's crown jewel — the canyon that changes how you see rock forever.</p>
+</div>
+
+<!-- ══════════ 3/27 ZION DAY 1 ══════════ -->
+<section class="day-section" id="day-327">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80'); background-color: #6B3A1A;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 2</span>
+        <span class="day-type">SLC → Zion</span>
+      </div>
+      <h2>Friday, March 27</h2>
+      <p class="day-vibe">Big views, small effort. First day magic.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="hotel-badge">🏡 Zion VRBO · Check-in · 3 nights</div>
+    <div class="drive-callout">
+      <div class="drive-eyebrow">4-Hour Drive via I-15 South → Hwy 9 East</div>
+      <h3>Enter Through the East Entrance — Worth the Extra Miles</h3>
+      <p>Skip the main South Entrance and come in from the east on Hwy 9. You'll pass through the <strong>Zion-Mt. Carmel Tunnel</strong> — 1.1 miles carved through solid sandstone — and emerge into the canyon with Checkerboard Mesa's crosshatched rock on your left and your first true canyon views dead ahead. This is the arrival the park deserves.</p>
+      <div class="drive-stops">
+        <span class="drive-stop">🪨 Checkerboard Mesa — East Entrance pull-off</span>
+        <span class="drive-stop">🚇 Zion-Mt. Carmel Tunnel — 1.1 mi of carved rock</span>
+        <span class="drive-stop">👁️ Canyon Junction Bridge — first canyon panorama</span>
+      </div>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Morning</div>
+        <h3>Scout Lookout Trail</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">3.6 mi</span>
+          <span class="trail-badge trail-moderate">Moderate</span>
+          <span class="trail-badge trail-permit">⚡ Permit = Summit</span>
+        </div>
+        <p>The switchback climb through Walter's Wiggles — 21 tight stone zigzags hand-cut into the cliff — leads to the flat mesa of Scout Lookout, perched directly above Zion Canyon. The views from the top are staggering. If Nick's lottery permit comes through, the chains to Angels Landing summit begin right here.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/scouts-lookout-and-angels-landing-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon</div>
+        <h3>Watchman Trail</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">3.3 mi</span>
+          <span class="trail-badge trail-moderate">Moderate</span>
+        </div>
+        <p>A perfect recovery hike — loops up to a mesa with panoramic views of the Watchman formation and the Virgin River valley glowing in afternoon light. One of the best sunset perches in the park. Start by 3 PM to catch the light at its best.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/watchman-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🎫</div>
+      <p><strong>Angels Landing Permit:</strong> Required via recreation.gov lottery. Day-before and day-of lotteries run daily — results post at 3 PM. If Nick hasn't entered yet, go now: <em>recreation.gov/permits/4675315</em>. Scout Lookout is a spectacular endpoint regardless.</p>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🚌</div>
+      <p>Private vehicles cannot drive Zion Canyon Scenic Drive in season. Park at the Visitor Center or Human History Museum lot and take the free shuttle — runs every 7 minutes at peak season. Human History Museum lot is less crowded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3/28 THE NARROWS ══════════ -->
+<section class="day-section" id="day-328">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?auto=format&fit=crop&w=1400&q=80'); background-color: #1A3A4A;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 3</span>
+        <span class="day-type">Stay in Zion</span>
+      </div>
+      <h2>Saturday, March 28</h2>
+      <p class="day-vibe">High intensity, iconic Zion.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Full Morning (Go As Far As You Want)</div>
+        <h3>The Narrows</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">5.4 mi+</span>
+          <span class="trail-badge trail-hard">Strenuous</span>
+        </div>
+        <p>Wading upstream through the Virgin River inside a 2,000-foot slot canyon — one of the most surreal hikes on earth. The first mile is the most spectacular. Push to Wall Street (1.5 mi in) for the narrowest, most cathedral-like section. You don't have to go the full distance to be completely blown away. In late March, water runs cold and thigh-deep in sections — dry suits are mandatory.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/the-narrows-bottom-up" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon</div>
+        <h3>Temple of Sinawava</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">Shuttle Stop 9</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>The natural amphitheater at the end of the shuttle line where the Narrows begins. Return here dry in the afternoon — the scale of the canyon walls reads completely differently when you're not mid-river. Riverside Walk (1.1 mi paved, completely flat) connects it seamlessly. Extraordinary late-day light on the canyon walls.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/riverside-walk" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🤿</div>
+      <p><strong>Rent dry suits — this is non-negotiable in March.</strong> Water temps run 40–50°F. Without a dry suit, neoprene socks, and canyoneering shoes, you risk hypothermia within an hour. Zion Outfitter and Zion Adventure Company both rent full packages (~$45/person). Reserve online before you arrive in Springdale.</p>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🌊</div>
+      <p>Check flash flood conditions the morning of at <em>zionpark.net</em> or call the Zion recorded conditions line. The Narrows closes with zero notice when upstream weather threatens. Backup plan: Emerald Pools loop (Shuttle Stop 5) is excellent and keeps everyone happy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3/29 CHILL DAY ══════════ -->
+<section class="day-section" id="day-329">
+  <div class="day-hero" style="background: linear-gradient(160deg, #3A5C48 0%, #5C7A60 50%, #8A9A7B 100%); min-height: 430px;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 4</span>
+        <span class="day-type">Stay in Zion</span>
+      </div>
+      <h2>Sunday, March 29</h2>
+      <p class="day-vibe">Chill easy day — flat, paved, and beautiful.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Morning</div>
+        <h3>Riverside Walk + Emerald Falls</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">2.2 mi</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>The gentlest walk in Zion — fully paved, stroller-accessible, and completely beautiful. Follows the Virgin River through overhanging canyon walls to the mouth of the Narrows. Add a side detour to Emerald Falls for the canyon's best spring waterfall, especially lush in late March when snowmelt is running.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/riverside-walk" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon + Sunset</div>
+        <h3>Pa'rus Trail + Hot Springs</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">Flex</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>Pa'rus is a 1.7-mile paved trail hugging the Virgin River — perfect for golden hour when the canyon walls go deep orange and the cottonwoods glow. After the sun drops, search "Zion Hot Springs" for the natural hot springs near the park boundary. A short hike, a surreal soak, and a memory the family won't shake.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/pa-rus-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="roadside-strip">
+      <div class="roadside-eyebrow">Before You Leave Zion Tomorrow</div>
+      <h3>Weeping Rock — Don't Drive Past It</h3>
+      <p>Shuttle Stop 7. A 10-minute walk to a dripping alcove where groundwater seeps through the canyon wall, feeding hanging gardens of columbine and maidenhair fern. Free, fast, and completely otherworldly. Younger kids especially love the dripping ceiling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BRYCE BANNER ══════════ -->
+<div class="park-banner bryce" id="bryce">
+  <div class="park-label">National Park</div>
+  <h2>Bryce Canyon</h2>
+  <p>The most concentrated hoodoo landscape on earth — glowing rust-red at sunrise, eerie orange at dusk.</p>
+</div>
+
+<!-- ══════════ 3/30 ZION → BRYCE ══════════ -->
+<section class="day-section" id="day-330">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1400&q=80'); background-color: #7A3A10;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 5</span>
+        <span class="day-type">Zion → Bryce · 2.5 hrs</span>
+      </div>
+      <h2>Monday, March 30</h2>
+      <p class="day-vibe">Check-in at Bryce Lodge. First hoodoos tonight.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="hotel-badge">🏨 Bryce Lodge · Mom's Reservation · 2 nights</div>
+    <div class="drive-callout">
+      <div class="drive-eyebrow">~2.5 Hours via Hwy 9 → US-89 North → Hwy 12</div>
+      <h3>Stop at Red Canyon — Almost Nobody Does</h3>
+      <p>Head north on US-89 through Kanab and Panguitch. Just before Bryce on Hwy 12, you'll pass through <strong>Red Canyon</strong> — a free, pull-off hoodoo landscape that looks almost identical to Bryce but has basically zero people. Stop for 20 minutes and wander. It's stunning. Then continue to the park.</p>
+      <div class="drive-stops">
+        <span class="drive-stop">🟠 Red Canyon — FREE hoodoos, Hwy 12 pull-off</span>
+        <span class="drive-stop">🏙️ Panguitch — historic main street, good lunch stop</span>
+        <span class="drive-stop">🌵 Coral Pink Sand Dunes — side detour if time allows</span>
+        <span class="drive-stop">🦌 Watch for pronghorn antelope on Hwy 89</span>
+      </div>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Afternoon (After Check-In)</div>
+        <h3>The Rim Trail</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">1.0 mi</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>A short stroll along the canyon rim between Sunrise and Sunset Points. Look DOWN into the amphitheater from above — this is how Bryce is designed to be seen first. Get your bearings before tomorrow's descent into the hoodoos themselves.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/bryce-canyon-rim-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Evening</div>
+        <h3>Sunset Point — Thor's Hammer</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">Overlook</span>
+          <span class="trail-badge trail-easy">No hike needed</span>
+        </div>
+        <p>Stand at Sunset Point as the light turns the hoodoos from orange to blood-red to deep violet. Thor's Hammer — the park's iconic formation — catches the last rays perfectly. Arrive 30 minutes before sunset and find a spot on the rim. This one hits differently than any photograph can prepare you for.</p>
+      </div>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🌡️</div>
+      <p>Bryce sits at 8,000+ feet — significantly colder than Zion. Late March temperatures drop to the 20s°F overnight, low 50s during the day. Layers are non-negotiable: wool base, puffy, wind shell. Don't assume Zion weather equals Bryce weather.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3/31 BRYCE ALL DAY ══════════ -->
+<section class="day-section" id="day-331">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1541795083-f7b5ac536571?auto=format&fit=crop&w=1400&q=80'); background-color: #8B4A15;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 6</span>
+        <span class="day-type">Stay in Bryce</span>
+      </div>
+      <h2>Tuesday, March 31</h2>
+      <p class="day-vibe">The hoodoo masterpiece.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Morning</div>
+        <h3>Navajo Loop / Queens Garden</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">3.0 mi</span>
+          <span class="trail-badge trail-moderate">Moderate</span>
+        </div>
+        <p>The definitive Bryce hike — descend through Wall Street (narrow slot between hoodoos towering overhead), wind through the amphitheater floor among the formations, and exit past the Queen Victoria hoodoo. The pro move: go <em>down</em> Navajo, <em>up</em> Queens Garden. It's the right direction and turns a hard climb into an easy one.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/queens-garden-and-navajo-loop-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon</div>
+        <h3>Mossy Cave Trail</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">0.8 mi</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>Bryce's most underrated gem — an easy out-and-back to a waterfall and a grotto dripping with moss and occasional early-spring ice formations. Located just outside the main park on Hwy 12. Free, no shuttle needed, and completely unique from everything else in the park. Kids love the waterfall.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/mossy-cave-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="roadside-strip">
+      <div class="roadside-eyebrow">Drive the Park Road Between Hikes</div>
+      <h3>Natural Bridge Overlook + Rainbow Point</h3>
+      <p>Drive the 17-mile park road south to Natural Bridge overlook — a massive stone arch framing the canyon below it — then continue to Rainbow Point at 9,115 feet, the highest viewpoint in Bryce. On a clear day you can see into four states. Takes 45 minutes round trip with zero hiking required.</p>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🌅</div>
+      <p><strong>Set your alarm for Sunrise Point.</strong> Bryce is one of the rare places where sunrise beats sunset — the low morning angle lights the hoodoos from within in a way that looks almost unreal. Around 6:30 AM in late March. Bring your warmest layer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CAPITOL REEF BANNER ══════════ -->
+<div class="park-banner capitol" id="capitol">
+  <div class="park-label">National Park</div>
+  <h2>Capitol Reef</h2>
+  <p>Utah's secret park — Waterpocket Fold geology, pioneer orchards, and the best pie in the desert.</p>
+</div>
+
+<!-- ══════════ 4/1 BRYCE → CAPITOL REEF ══════════ -->
+<section class="day-section" id="day-401">
+  <div class="day-hero" style="background: linear-gradient(150deg, #7A4510 0%, #C0614A 45%, #8A9A7B 100%); min-height: 430px;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 7</span>
+        <span class="day-type">Bryce → Torrey · Highway 12</span>
+      </div>
+      <h2>Wednesday, April 1</h2>
+      <p class="day-vibe">Highway 12 — the most beautiful drive in America.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="hotel-badge">🏨 Red Sands Hotel · Torrey · 1 night</div>
+    <div class="drive-callout">
+      <div class="drive-eyebrow">Highway 12 Scenic Byway · ~2.5 Hours</div>
+      <h3>The Drive That Makes People Pull Over and Cry</h3>
+      <p>Highway 12 from Bryce to Torrey is not marketing — it is genuinely one of the most breathtaking stretches of road in the United States. It climbs over Boulder Mountain, descends through slot canyon country, and crosses <strong>The Hogback</strong>, a razor-thin ridge where the road is barely two lanes wide with 800-foot drops on both sides. Slow down. Build in 90 extra minutes for stops. You will not regret it.</p>
+      <div class="drive-stops">
+        <span class="drive-stop">☕ Kiva Koffeehouse — canyon rim coffee, must stop</span>
+        <span class="drive-stop">🌉 The Hogback — pull over and stand on the ridge</span>
+        <span class="drive-stop">🏔️ Boynton Overlook — sweeping canyon panorama</span>
+        <span class="drive-stop">🏺 Anasazi State Park — Boulder (15 min, worth it)</span>
+        <span class="drive-stop">💧 Calf Creek Falls viewpoint — roadside pull-off</span>
+      </div>
+    </div>
+    <div class="roadside-strip">
+      <div class="roadside-eyebrow">Can't-Miss Stop · On Your Exact Route</div>
+      <h3>☕ Kiva Koffeehouse</h3>
+      <p>A coffee shop cantilevered over a canyon rim between Escalante and Boulder — cappuccino with a 600-foot drop below the windows. Cinnamon rolls, fresh pastries, and arguably the best view from any coffee shop anywhere. Seasonal — opens mid-March most years, confirm hours before you go. This is not optional.</p>
+    </div>
+    <div class="activity-single">
+      <div class="activity-time">Afternoon · Capitol Reef National Park</div>
+      <h3>Cassidy Arch Trail</h3>
+      <div class="trail-meta">
+        <span class="trail-badge trail-miles">3.4 mi</span>
+        <span class="trail-badge trail-moderate">Moderate</span>
+      </div>
+      <p>Named for Butch Cassidy, who used Capitol Reef's canyon network as a hideout. The trail climbs above Grand Wash to a massive sandstone arch — and you can walk across it. Views from the top span the entire Waterpocket Fold. One of the most undervisited great hikes in Utah's national parks system, which means almost no crowds.</p>
+      <a href="https://www.alltrails.com/trail/us/utah/cassidy-arch-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🥧</div>
+      <p><strong>Gifford House</strong> is inside Capitol Reef and opens early spring — call ahead to confirm April hours. Their homemade pies (apple, cherry, peach) and preserves sell out by mid-morning. Plan to swing by first thing on 4/2 before leaving for Moab.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MOAB BANNER ══════════ -->
+<div class="park-banner moab" id="moab">
+  <div class="park-label">Arches · Canyonlands · Dead Horse Point</div>
+  <h2>Moab</h2>
+  <p>Three days in red rock country — arches, mesas, and canyon overlooks that break your sense of scale.</p>
+</div>
+
+<!-- ══════════ 4/2 TORREY → MOAB ══════════ -->
+<section class="day-section" id="day-402">
+  <div class="day-hero" style="background: linear-gradient(150deg, #3A2010 0%, #7A4515 45%, #B07A40 100%); min-height: 430px;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 8</span>
+        <span class="day-type">Torrey → Moab · Hwy 24</span>
+      </div>
+      <h2>Thursday, April 2</h2>
+      <p class="day-vibe">Alien landscapes. Best drive nobody talks about.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="hotel-badge">🏡 Moab VRBO · Check-in · 3 nights</div>
+    <div class="drive-callout">
+      <div class="drive-eyebrow">The Hanksville Trio · Highway 24 East</div>
+      <h3>Factory Butte, Bentonite Hills & Moonscape Overlook</h3>
+      <p>Highway 24 east of Capitol Reef enters a landscape that looks genuinely extraterrestrial — pale grey and purple clay badlands, flat-topped mesas rising from white plains, zero vegetation for miles. Pull off for Factory Butte (10 minutes on a well-maintained dirt road), the colored Bentonite Hills, and the sweeping Moonscape Overlook. Mars, Utah-edition. Don't rush through this stretch.</p>
+      <div class="drive-stops">
+        <span class="drive-stop">🏔️ Factory Butte — 10 min dirt road off Hwy 24</span>
+        <span class="drive-stop">🎨 Bentonite Hills — purple and grey alien badlands</span>
+        <span class="drive-stop">🌐 Moonscape Overlook — sweeping extraterrestrial views</span>
+        <span class="drive-stop">⛽ Hollow Mountain — store literally carved into sandstone</span>
+        <span class="drive-stop">👾 Goblin Valley — 30 min detour, absolutely worth it</span>
+      </div>
+    </div>
+    <div class="roadside-strip">
+      <div class="roadside-eyebrow">30-Minute Detour Off Hwy 24 — Highly Recommended</div>
+      <h3>👾 Goblin Valley State Park</h3>
+      <p>Hundreds of mushroom-shaped sandstone goblins clustered in a flat valley with no designated trails — you just wander among them. Used as a film location, beloved by every family who's ever been there. $20/vehicle entry. One of Utah's most unique landscapes and wildly undervisited compared to the national parks. Kids go absolutely feral here in the best way.</p>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Morning · Before Leaving Torrey</div>
+        <h3>Gifford House</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-stop">Must Stop</span>
+        </div>
+        <p>Start the day here, inside Capitol Reef. Homemade pies, fresh jams, and preserves in a historic pioneer homestead. Get there early — they bake daily but supply is limited and it sells out fast. Grab two pies: one for the road today, one for tonight in Moab.</p>
+        <div class="order-this" style="margin-top:0.75rem; font-size:0.78rem; font-weight:600; color: var(--sage-dark);">Order: Apple pie, cherry pie, grab the preserves too</div>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon · Arches National Park</div>
+        <h3>Delicate Arch</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">3.2 mi</span>
+          <span class="trail-badge trail-moderate">Moderate</span>
+        </div>
+        <p>Utah's most iconic image — a 65-foot freestanding arch on a slickrock bowl with the La Sal Mountains behind it. The hike feels ordinary until you crest the final ridge and it's suddenly just there, enormous and impossible. Go for sunset. The arch turns deep amber and the crowd goes quiet. It earns every bit of its reputation.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/delicate-arch-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🔦</div>
+      <p><strong>Every person needs a headlamp for Delicate Arch.</strong> Go at sunset — the arch turns amber and the experience is incomparable. But the slickrock descent back to the trailhead is in full dark, and phone flashlights don't cut it. Real headlamps, everyone, including the kids.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 4/3 CANYONLANDS ══════════ -->
+<section class="day-section" id="day-403">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1400&q=80'); background-color: #2A1A0A;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 9</span>
+        <span class="day-type">Stay in Moab</span>
+      </div>
+      <h2>Friday, April 3</h2>
+      <p class="day-vibe">Glowing arch. Canyon infinity. The view that ends all arguments.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Sunrise — Set Your Alarm</div>
+        <h3>Mesa Arch</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">0.6 mi</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>The most photogenic 20 minutes of the entire trip. A flat half-mile walk to a sandstone arch that frames the canyon below — at sunrise, the underside of the arch reflects the canyon's glow and lights up fiery orange. Be there 20 minutes before sunrise. You'll understand immediately why this photograph exists everywhere.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/mesa-arch-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon</div>
+        <h3>Grand View Point Trail</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">2.0 mi</span>
+          <span class="trail-badge trail-easy">Easy</span>
+        </div>
+        <p>A flat, exposed rim walk to the southernmost overlook in Canyonlands' Island in the Sky district. The entire canyon system spreads below you for 100 miles in every direction. The Colorado and Green Rivers are visible 2,000 feet down as silver ribbons through the rock. There are no guardrails. The scale is genuinely disorienting.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/grand-view-point-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="roadside-strip">
+      <div class="roadside-eyebrow">30-Minute Detour — Absolutely Do Not Skip</div>
+      <h3>Dead Horse Point State Park</h3>
+      <p>A narrow mesa jutting 2,000 feet over a perfect Colorado River horseshoe bend. Many seasoned travelers say this beats the Grand Canyon's South Rim for sheer visual impact per square foot of viewing area. It's just off the road to Canyonlands Island in the Sky — you're essentially driving past it anyway. $20 state park fee. Go.</p>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🗺️</div>
+      <p>Mesa Arch at sunrise → Dead Horse Point mid-morning → Grand View Point after lunch. These three stops are within 30 minutes of each other and flow perfectly in that order. The whole day feels effortless and the payoffs are enormous.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 4/4 MOAB FINAL DAY ══════════ -->
+<section class="day-section" id="day-404">
+  <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=1400&q=80'); background-color: #3A1A0A;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 10</span>
+        <span class="day-type">Stay in Moab</span>
+      </div>
+      <h2>Saturday, April 4</h2>
+      <p class="day-vibe">Upheaval Dome. Overlooks. The last big one.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-time">Morning</div>
+        <h3>"The Island" Rim Walks</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">Flex</span>
+          <span class="trail-badge trail-flex">Choose Your Distance</span>
+        </div>
+        <p>Canyonlands Island in the Sky rim walks — including Upheaval Dome overlook, a mysterious crater that geologists still debate (meteor impact vs. salt dome collapse). Walk any rim trail until the canyon satisfies you. The scale never gets old, even after Mesa Arch the day before.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/upheaval-dome-overlook-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+      <div class="activity-card afternoon">
+        <div class="activity-time">Afternoon</div>
+        <h3>Corona Arch</h3>
+        <div class="trail-meta">
+          <span class="trail-badge trail-miles">3.0 mi</span>
+          <span class="trail-badge trail-moderate">Moderate</span>
+        </div>
+        <p>Bigger than Delicate Arch — tall enough for a Boeing 747 to fly through (people have actually done it). Completely off the national park circuit, beloved by Moab locals for exactly that reason: far fewer crowds, and the arch overhead at the end is staggering. Trail follows a railroad grade then scrambles up slickrock with handholds bolted in.</p>
+        <a href="https://www.alltrails.com/trail/us/utah/corona-arch-trail" class="alltrails-link" target="_blank">View on AllTrails →</a>
+      </div>
+    </div>
+    <div class="roadside-strip">
+      <div class="roadside-eyebrow">On the Drive Back from Corona Arch</div>
+      <h3>Fisher Towers + Highway 128 River Road</h3>
+      <p>Take Highway 128 along the Colorado River out of Moab instead of the highway — red canyon walls, cottonwood groves, and Castle Valley spires the whole way. Pull off at Fisher Towers (massive 900-foot red sandstone spires used in Westerns and car commercials for decades). Five-minute stop, completely unforgettable silhouette against the sky.</p>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">🌮</div>
+      <p>Last night — treat yourselves. <strong>Milt's Stop & Eat</strong> (since 1954, cash only, best burger of the trip) or <strong>Pasta Jay's</strong> (Moab locals' go-to dinner, great pasta, lively atmosphere). You've earned either.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 4/5 DEPARTURE ══════════ -->
+<section class="day-section" id="day-405">
+  <div class="day-hero" style="background: linear-gradient(160deg, #2C1810 0%, #4A3728 55%, #8A7F7A 100%); min-height: 300px;">
+    <div class="day-hero-content">
+      <div class="day-meta">
+        <span class="day-number">Day 11</span>
+        <span class="day-type">Moab → SLC</span>
+      </div>
+      <h2>Sunday, April 5</h2>
+      <p class="day-vibe">Fly home. One last Utah surprise.</p>
+    </div>
+  </div>
+  <div class="day-content">
+    <div class="drive-callout">
+      <div class="drive-eyebrow">4:40 PM Flight · 3h 45m Drive · Leave Moab by 11 AM</div>
+      <h3>Little Egypt Geological Site — Your Farewell Gift</h3>
+      <p>On Highway 24 heading back toward I-70 and SLC, pull off for Little Egypt Geological Site — a cluster of small sandstone hoodoos rising from the desert floor, completely free, completely roadside. It feels like a miniature Bryce Canyon that nobody knows about. You'll likely be the only ones there. Twenty minutes, zero crowds, and a perfect final image from the trip.</p>
+      <div class="drive-stops">
+        <span class="drive-stop">🗿 Little Egypt Hoodoos — Hwy 24, look for the BLM sign</span>
+        <span class="drive-stop">⛽ Green River — fuel stop + Ray's Tavern if hungry</span>
+        <span class="drive-stop">🛣️ I-70 West → I-15 North → SLC</span>
+        <span class="drive-stop">✈️ 4:40 PM departure, SLC International</span>
+      </div>
+    </div>
+    <div class="tip-inline">
+      <div class="tip-inline-icon">⏰</div>
+      <p>Leave Moab no later than 11 AM to be comfortable. The drive is 3h 45m without stops — build in buffer for Little Egypt and a gas stop in Green River. SLC airport is easy but don't push it with a family in tow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SCENIC DRIVES ══════════ -->
+<section id="scenic-drives">
+  <div class="section-header">
+    <div class="section-eyebrow">The Roads</div>
+    <h2>Scenic Drives Worth Slowing Down For</h2>
+    <p>Four drives that belong on your itinerary as much as any hike.</p>
+  </div>
+  <div class="drives-grid">
+    <div class="drive-card">
+      <div class="drive-card-img" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80'); background-color: #6B3A1A;"></div>
+      <div class="drive-card-body">
+        <h3>Zion East Entrance · Hwy 9</h3>
+        <p>Enter through the east for the most dramatic park arrival in Utah. Checkerboard Mesa, the Mt. Carmel Tunnel, and your first canyon views all hit in rapid succession. Worth the extra miles over the south entrance every time.</p>
+        <div class="drive-card-stops">
+          <div class="drive-card-stop">Checkerboard Mesa pull-off</div>
+          <div class="drive-card-stop">Zion-Mt. Carmel Tunnel (1.1 mi carved rock)</div>
+          <div class="drive-card-stop">Canyon Junction Bridge first views</div>
+        </div>
+      </div>
+    </div>
+    <div class="drive-card">
+      <div class="drive-card-img" style="background: linear-gradient(135deg, #D4732A 0%, #8B4513 100%);"></div>
+      <div class="drive-card-body">
+        <h3>Hwy 89 · Zion → Bryce</h3>
+        <p>Red Canyon just before Bryce on Hwy 12 — a free hoodoo landscape that most visitors drive past without stopping. Stop. The formations are nearly identical to Bryce and you'll have the place to yourself. Kanab's main street is good for lunch.</p>
+        <div class="drive-card-stops">
+          <div class="drive-card-stop">Red Canyon (free — pull over)</div>
+          <div class="drive-card-stop">Kanab historic main street</div>
+          <div class="drive-card-stop">Coral Pink Sand Dunes (detour)</div>
+        </div>
+      </div>
+    </div>
+    <div class="drive-card">
+      <div class="drive-card-img" style="background: linear-gradient(135deg, #5C6B55 0%, #8A9A7B 100%);"></div>
+      <div class="drive-card-body">
+        <h3>Highway 12 Scenic Byway</h3>
+        <p>Consistently ranked the most scenic road in the USA. The Hogback — a ridge with 800-ft drops on both sides — is genuinely terrifying and beautiful. Budget 90 extra minutes. Kiva Koffeehouse on your route is unmissable.</p>
+        <div class="drive-card-stops">
+          <div class="drive-card-stop">Kiva Koffeehouse (canyon rim coffee)</div>
+          <div class="drive-card-stop">The Hogback — narrow ridge, pull over</div>
+          <div class="drive-card-stop">Boynton Overlook</div>
+          <div class="drive-card-stop">Anasazi State Park, Boulder</div>
+        </div>
+      </div>
+    </div>
+    <div class="drive-card">
+      <div class="drive-card-img" style="background: linear-gradient(135deg, #3A2510 0%, #7A5030 100%);"></div>
+      <div class="drive-card-body">
+        <h3>Hanksville Trio · Hwy 24</h3>
+        <p>The most Mars-like 40 miles in Utah — pale clay, alien silence, zero vegetation. Factory Butte, Bentonite Hills, Moonscape Overlook. Then Goblin Valley 30 minutes off-route. The hidden highlight of the trip-between-parks.</p>
+        <div class="drive-card-stops">
+          <div class="drive-card-stop">Factory Butte</div>
+          <div class="drive-card-stop">Bentonite Hills</div>
+          <div class="drive-card-stop">Moonscape Overlook</div>
+          <div class="drive-card-stop">Hollow Mountain gas station</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOD & COFFEE ══════════ -->
+<section id="food">
+  <div class="section-header">
+    <div class="section-eyebrow">Eat &amp; Drink</div>
+    <h2>Where the Locals Actually Go</h2>
+    <p>No chains. No tourist traps. Sourced from Reddit, local guides, and years of desert road trips.</p>
+  </div>
+  <div class="food-tabs">
+    <button class="food-tab active" onclick="showFood('springdale', this)">Springdale (Zion)</button>
+    <button class="food-tab" onclick="showFood('torrey', this)">Torrey (Capitol Reef)</button>
+    <button class="food-tab" onclick="showFood('moab', this)">Moab</button>
+  </div>
+
+  <div class="food-location active" id="food-springdale">
+    <div class="food-location-header">
+      <h3>Springdale</h3>
+      <p>Gateway to Zion · Surprisingly solid food and coffee scene for a small town</p>
+    </div>
+    <div class="food-grid">
+      <div class="food-card coffee">
+        <div class="food-card-type">☕ Best Coffee</div>
+        <h4>Deep Creek Coffee Co.</h4>
+        <p>Reddit's unanimous Springdale coffee pick, year after year. Solid espresso drinks, outdoor river seating, and the rosemary focaccia is genuinely excellent. Gets busy by 8 AM — go early or plan for a short wait. Worth every minute.</p>
+        <div class="order-this">Order: Cappuccino + rosemary focaccia</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🌮 Best Breakfast / Lunch</div>
+        <h4>Oscar's Cafe</h4>
+        <p>Springdale institution since 1993. Trail runners and rangers swear by the massive pork green chili burritos — portions are enormous and the price is right. Breakfast is solid. Lines move fast. Go here before or after your first shuttle ride.</p>
+        <div class="order-this">Order: Pork green chili burrito, huevos rancheros</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🍹 Best Dinner</div>
+        <h4>Bit &amp; Spur Restaurant</h4>
+        <p>Springdale's best sit-down dinner. Upscale Mexican-inspired with great margaritas, a lively patio, and food that punches well above its desert-town location. Beloved by the guide and ranger community. Reservations recommended on weekends.</p>
+        <div class="order-this">Order: Tamales, enchilada plates, a mezcal margarita</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🌵 Local Go-To</div>
+        <h4>Whiptail Grill</h4>
+        <p>Casual Mexican with a big outdoor patio and mountain views. Great for groups, relaxed atmosphere, solid tacos. The hiking crowd's pick for eating outside after a trail day. Seasonal — call ahead to confirm they're open in late March.</p>
+        <div class="order-this">Order: Fish tacos, the bowls</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="food-location" id="food-torrey">
+    <div class="food-location-header">
+      <h3>Torrey + Highway 12</h3>
+      <p>Capitol Reef Area · Small town, one legendary pie, one legendary view from a coffee shop</p>
+    </div>
+    <div class="food-grid">
+      <div class="food-card must">
+        <div class="food-card-type">🥧 Absolute Must</div>
+        <h4>Gifford House</h4>
+        <p>Inside Capitol Reef National Park. Homemade pies — apple, cherry, peach — fresh preserves, and honey, made in a historic pioneer homestead. Sells out by mid-morning. Go early. This is one of those rare travel food experiences where the hype is entirely justified.</p>
+        <div class="order-this">Order: Apple pie, grab two — one for the road</div>
+      </div>
+      <div class="food-card coffee">
+        <div class="food-card-type">☕ Best Coffee (On Your Route)</div>
+        <h4>Kiva Koffeehouse</h4>
+        <p>Not in Torrey — it's on Highway 12 between Escalante and Boulder, right on your Bryce-to-Capitol Reef drive. Cantilevered over a canyon rim with a 600-foot drop below the windows. Cappuccino with that view. Seasonal — confirm hours. This is the stop of the whole trip.</p>
+        <div class="order-this">Order: Cappuccino, cinnamon roll, window table</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🍔 Best Burger</div>
+        <h4>Capitol Burger Food Truck</h4>
+        <p>Operating in Torrey, consistently praised by local guides and travel writers as the best burgers in the southern Utah desert. No frills, high quality, exactly the fuel you want after a long hiking day in Capitol Reef.</p>
+        <div class="order-this">Order: The classic smash burger</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🍽️ Local Diner</div>
+        <h4>Capitol Reef Inn &amp; Cafe</h4>
+        <p>The local diner that's been feeding hikers and rangers for decades. Simple food done reliably well — unpretentious, consistent, good value. The garden salad with local herbs is surprisingly fresh. Great for a no-fuss dinner before an early start.</p>
+        <div class="order-this">Order: Daily special, whatever's fresh</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="food-location" id="food-moab">
+    <div class="food-location-header">
+      <h3>Moab</h3>
+      <p>Arches &amp; Canyonlands · Best food scene of the trip, by a comfortable margin</p>
+    </div>
+    <div class="food-grid">
+      <div class="food-card coffee">
+        <div class="food-card-type">☕ Best Coffee</div>
+        <h4>Doughbird</h4>
+        <p>Famous donuts and legitimately solid coffee. The line moves fast, the donuts are seasonal and inventive, and the espresso is the best in Moab. Opens early — perfect for fueling up before a pre-dawn Mesa Arch departure. A genuine local institution now.</p>
+        <div class="order-this">Order: Seasonal donut + cortado or cappuccino</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🍳 Best Breakfast</div>
+        <h4>Moab Diner</h4>
+        <p>Classic American diner done exactly right. The green chili sauce is the reason locals talk about this place — it goes on everything and it is genuinely exceptional. Counter seating, zero pretension, enormous portions. The fuel you need before a full canyon day.</p>
+        <div class="order-this">Order: Green chili eggs, anything with the sauce</div>
+      </div>
+      <div class="food-card must">
+        <div class="food-card-type">🍔 Moab Icon Since 1954</div>
+        <h4>Milt's Stop &amp; Eat</h4>
+        <p>Cash only. No frills. A roadside stand making the same burgers since 1954. Fresh-pressed patties, hand-scooped shakes, picnic tables full of river guides and canyon bikers every night. Irreplaceable. This is the meal you'll still talk about in five years.</p>
+        <div class="order-this">Order: Double patty, chocolate shake — bring cash</div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-type">🍝 Best Dinner</div>
+        <h4>Pasta Jay's</h4>
+        <p>Moab locals' consistent dinner recommendation across every Reddit thread, every local guide, every blog post. Great Italian in the desert — solid pasta, reliable execution, lively atmosphere. The last-night dinner pick when you want to sit down and actually celebrate.</p>
+        <div class="order-this">Order: Whatever pasta special they're running</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TIPS ══════════ -->
+<section id="tips">
+  <div class="section-header">
+    <div class="section-eyebrow">Veteran Advice</div>
+    <h2>Know Before You Go</h2>
+  </div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🤿</div>
+      <div>
+        <h4>Rent Dry Suits for the Narrows</h4>
+        <p>Non-negotiable in March. Water temps hit 40–50°F — without dry suit and neoprene socks you risk hypothermia within an hour. Rent from Zion Outfitter or Zion Adventure Company (~$45/person). Reserve online before arriving in Springdale.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔦</div>
+      <div>
+        <h4>Headlamp for Delicate Arch</h4>
+        <p>Go at sunset — the arch turns amber and nothing compares. But the slickrock descent back is in full dark. Every person needs a real headlamp (not a phone flashlight). Include the kids.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎒</div>
+      <div>
+        <h4>Pack Your Own Lunches</h4>
+        <p>Zion shuttle food lines can hit 45–60 minutes at peak times. Packed lunches mean you eat when and where you want — on a canyon rim, at the river, at the trailhead. Stock up your first night in SLC. Life-changing for a family trip.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🥧</div>
+      <div>
+        <h4>Gifford House Pies Sell Out by 10 AM</h4>
+        <p>They bake daily but supply is limited. If you arrive at noon there's nothing left. Go first thing in the morning — this applies especially in early April as they ramp up for the season.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌡️</div>
+      <div>
+        <h4>Bryce is Much Colder Than Zion</h4>
+        <p>Bryce is at 8,000 feet. Zion is at 4,000 feet. Nights drop to the 20s°F. Pack real layers — wool base, puffy jacket, wind shell. Don't assume Zion weather equals Bryce weather. It doesn't.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌊</div>
+      <div>
+        <h4>Check Narrows Conditions Every Morning</h4>
+        <p>The Narrows closes instantly when upstream weather threatens floods. Check zionpark.net the morning of your hike. Backup plan: Emerald Pools loop (Shuttle Stop 5) is excellent and keeps everyone happy.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌅</div>
+      <div>
+        <h4>Bryce Sunrise Beats Sunset</h4>
+        <p>Set an alarm for Sunrise Point — low morning light makes the hoodoos glow from within in a way sunset cannot replicate. Around 6:30 AM in late March. Bring your warmest layer and don't skip it.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📸</div>
+      <div>
+        <h4>Mesa Arch: Arrive 20 Minutes Early</h4>
+        <p>The arch glows for about 10 minutes at sunrise. Arrive 20 minutes before sunrise — photographers will already be there, but it's still extraordinary. This is the single best alarm-worthy moment of the whole trip.</p>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💧</div>
+      <div>
+        <h4>Hydrate Before You're Thirsty</h4>
+        <p>Utah's desert air removes moisture faster than you feel it. Plan 1 liter per person per 2 hours of hiking. Altitude at Bryce and Canyonlands makes this worse. Start the morning hydrated, not catching up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATS BAR ══════════ -->
+<div class="stats-bar">
+  <div class="stats-label">The Army Family · Utah 2026</div>
+  <h2>The Trip in Numbers</h2>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">11</div>
+      <div class="stat-label">Days</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-label">National Parks</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">30+</div>
+      <div class="stat-label">Miles Hiked</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">~900</div>
+      <div class="stat-label">Miles Driven</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Memories Made</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>The Army Family &nbsp;·&nbsp; Once in a Lifetime &nbsp;·&nbsp; Utah National Parks &nbsp;·&nbsp; March 26 – April 5, 2026</p>
+</footer>
+
+<script>
+function showFood(location, btn) {
+  document.querySelectorAll('.food-location').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.food-tab').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('food-' + location).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
